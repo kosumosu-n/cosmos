@@ -4,7 +4,7 @@
 {% block content %}
 <header>
     <ul>
-        <li><a href="{% url 'note:index' %}"><img src="{% static 'images/note.jpg' %}" width="50px"></a></li>
+        <li><a href="{% url 'note:index' %}"><img src="{% static 'note/images/note.jpg' %}" width="50px"></a></li>
         <li><form method='POST' id='noteform' novalidate>{{ form.as_p }}{% csrf_token %}<input type="submit" value='追加' id='add'></form></li>
     </ul>
 </header>
@@ -17,7 +17,7 @@
         <div class='date'>{{ note.created }}</div>
         <div class='delete'>
             <a href="{% url 'note:delete' note.id %}">
-            <img src="{% static 'images/cross.png' %}" class="cross">
+            <img src="{% static 'note/images/cross.png' %}" class="cross">
             </a>
         </div>
     </div>

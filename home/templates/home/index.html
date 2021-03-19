@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>コスモス</title>
-        <link rel="icon" href="{% static 'favicon.ico' %}">
+        <link rel="icon" href="{% static 'home/favicon.ico' %}">
         <style>
             body {
                 background-color: rgb(240, 240, 240);
@@ -23,9 +23,15 @@
                 height: auto;
                 margin: 15px;
             }
+            #pf {
+                width: 160px;
+                height: auto;
+                margin: 15px;
+            }
         </style>
     </head>
     <body>
-        <a href="{% url 'note:index' %}"><div><img  id="note" src="{% static 'note.jpg' %}" alt="バグ"></div></a>
+        <a href="{% url 'note:index' %}"><div><img  id="note" src="{% static 'note/images/note.jpg' %}" alt="メモ"></div></a>
+        <a href="{% url 'pf:index' %}"><div><img  id="pf" src="{% static 'home/pf.png' %}" alt="素因数分解"></div></a>
     </body>
 </html>

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'note.apps.NoteConfig',
+    'pf.apps.PfConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
