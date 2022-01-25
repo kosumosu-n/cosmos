@@ -1,0 +1,36 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/edit.css' %}">
+<script src="{% static 'ew/script/edit.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<br>
+<form action="" method="POST" id="edit">
+    {% csrf_token %}
+    <label id="switch_label">
+        <span id="verb">動詞:</span>
+        {{ form.wverb }}
+        <span id="switch_content"></span>
+        <span id="switch_circle"></span>
+    </label>
+    <table>
+    {% for tr in form %}
+    {% if tr.name != "wverb"%}
+    <tr id="tr_{{ tr.name }}">
+        <th>{{ tr.label_tag }}</th>
+        <th>{{ tr }}</th>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </table>
+    <br>
+    <div id='buttons'>
+    <a href="{% url 'ew:detail' object.spell %}" id='cancel'>キャンセル</a>
+    <input type="submit" value="保存" id="save">
+    </div>
+</form>
+<a href="{% url 'ew:delete' object.spell %}" id="delete">削除</a>
+{% endblock %}

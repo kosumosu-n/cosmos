@@ -1,0 +1,19 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/delete.css' %}">
+{% endblock %}
+
+{% block content %}
+<p>例文
+    <span class='example'>{{ examples.sentence }}</span>
+    <span class='example'>{{ examples.ts }}</span>を削除しますか？
+</p>
+
+<form method="POST" id='deletepost'>
+    {% csrf_token %}
+    <div id='cancel' onClick="history.back();">キャンセル</div>
+    <input type="submit" value='削除' id='delete'>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/examples.css' %}">
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'ew:exadd' %}" id='add'>追加</a>
+<hr>
+{% for example in object_list %}
+<a style="text-decoration: none;color: black;" href="{% url 'ew:exedit' example.id %}">
+<div class='example'>
+    <div>
+    <p class='sentence'>{{ example.sentence }}</p>
+    <p class='ts'>{{ example.ts }}</p>
+    </div>
+</div></a>
+<hr>
+{% endfor %}
+{% endblock %}

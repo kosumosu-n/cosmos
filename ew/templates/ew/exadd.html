@@ -1,0 +1,21 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<br>
+<form action="" method="POST" id="add">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <br>
+    <div id='buttons'>
+    <div id='cancel' onClick="history.back();">キャンセル</div>
+    <input type="submit" value="保存" id="save">
+    </div>
+</form>
+{% endblock %}

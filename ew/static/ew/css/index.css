@@ -1,0 +1,43 @@
+.word {
+    font-size: 18px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+}
+
+.word:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+.word div {
+    width: calc(100% - 165px);
+    margin: 0px;
+    display: flex;
+}
+
+.spell, .ts {
+    display: block;
+    width: 120px;
+}
+
+
+.browsed {
+    float: right;
+    white-space: nowrap;
+}
+@media screen and (max-width: 517px)
+{
+    .word div {
+        width: 100%;
+        flex-direction: column;
+    }
+    span {
+        margin: 0 auto;
+        text-align:center
+    }
+    .browsed {
+        display: none;
+    }
+
+}

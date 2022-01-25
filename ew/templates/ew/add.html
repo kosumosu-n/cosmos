@@ -1,0 +1,37 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/add.css' %}">
+<script src="{% static 'ew/script/add.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<br>
+
+
+<form action="" method="POST" id='addform'>
+    {% csrf_token %}
+    <label id="switch_label">
+        <span id="verb">動詞:</span>
+        <input type="checkbox" id="switch_input" name="check"/>
+        <span id="switch_content"></span>
+        <span id="switch_circle"></span>
+    </label>
+    <div id="fields">
+    {% for field in form %}
+        <div class="field" id="{{ field.name }}">
+        {{ field.label_tag }}
+        <br>
+        {{ field }}
+        </div>
+        {% if field.name in "ts,pt,pp" %}
+        <div class='sample'></div>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <input type="submit" value="保存" id="save">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'note/base.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <ul>
+        <li><a href="{% url 'note:index' %}"><img src="{% static 'note/images/note.jpg' %}" width="50px"></a></li>
+        <li><form method='POST' id='noteform' novalidate>{{ form.as_p }}{% csrf_token %}<input type="submit" value='追加' id='add'></form></li>
+    </ul>
+</header>
+
+<main>
+
+    {% for note in notes %}
+    <div class='note'>
+        <div class='text'>{{ note.text }}</div>
+        <div class='date'>{{ note.created }}</div>
+        <div class='delete'>
+            <a href="{% url 'note:delete' note.id %}">
+            <img src="{% static 'note/images/cross.png' %}" class="cross">
+            </a>
+        </div>
+    </div>
+    
+    <hr>
+
+    {% endfor %}
+</main>
+
+
+{% endblock %}

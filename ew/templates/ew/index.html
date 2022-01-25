@@ -1,0 +1,21 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<br>
+{% for word in object_list %}
+<a style="text-decoration: none;color: black;" href="{% url 'ew:detail' word.spell %}">
+<div class='word'>
+    <div>
+    <span class='spell'>{{ word.spell }}</span>
+    <span class='ts'>{{ word.ts }}</span>
+    </div>
+    <span class='browsed'>{{ word.browsed }}</span>
+</div></a>
+<hr>
+{% endfor %}
+{% endblock %}

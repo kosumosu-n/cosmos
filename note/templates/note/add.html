@@ -1,0 +1,12 @@
+{% extends 'note/base.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <ul>
+        <li><a href="{% url 'note:index' %}"><img src="{% static 'note/images/note.jpg' %}" width="50px"></a></li>
+    </ul>
+</header>
+
+<form action="{% url 'note:index' %}" method='POST' id='noteform2' novalidate>{{ form.as_p }}{% csrf_token %}<input type="submit" value='追加' id='add'></form>
+{% endblock %}

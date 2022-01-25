@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>コスモス</title>
+        <link rel="icon" href="{% static 'home/favicon.ico' %}">
+        
+        <style>
+            body {
+                background-color: rgb(240, 240, 240);
+            }
+            div {
+                max-width: 1000px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: baseline;
+            }
+            a {
+                margin: 5px;
+                display: inline-block;
+                border-radius: 10px;
+                background-color: rgb(240, 240, 240);
+            }
+            a:hover {
+                background-color: rgb(218, 218, 218);
+            }
+            .icon {
+                height: auto;
+                margin: 15px;
+            }
+            #note {
+                width: 120px;
+            }
+            #pf {
+                width: 160px;
+            }
+            #ew {
+                width: 250px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+        <a href="{% url 'note:index' %}"><img  id="note" class="icon" src="{% static 'note/images/note.jpg' %}" alt="メモ"></a>
+        <a href="{% url 'pf:index' %}"><img  id="pf" class="icon" src="{% static 'home/pf.png' %}" alt="素因数分解"></a>
+        <a href="{% url 'ew:index' %}"><img  id="ew" class="icon" src="{% static 'ew/images/ew.png' %}" alt="英単語"></a>
+        </div>
+    </body>
+</html>

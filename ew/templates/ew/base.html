@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'ew/css/style.css' %}">
+        <link rel="icon" href="{% static 'ew/images/favicon.ico' %}">
+        <script src="{% static 'ew/script/base.js' %}" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex"/>
+        <title>英単語</title>
+        {% block head %}{% endblock %}
+   </head>
+   
+   <body>
+     <header>
+       <ul>
+         <li><a href="{% url 'ew:index' %}"><img src="{% static 'ew/images/ew.png' %}" width="90px" id='icon'></a></li>
+         <li id='scli'><form method='get' id='search' novalidate><input type="text" id='scinput'><input type="submit" value='検索' id='scstart'></form></li>
+         <li class='buttonli'><a href="{% url 'ew:add' %}" class="button"><span>追加</span></a></li>
+         <li class='buttonli'><a href="{% url 'ew:examples' %}" class="button"><span>例文</span></a></li>
+        </ul>
+     </header>
+     <div id="tools">{% block tools %}{% endblock %}</div>
+     <main>
+      {% block content %}{% endblock %}
+     </main>
+   </body>
+</html>

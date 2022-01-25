@@ -1,0 +1,41 @@
+.example {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.example:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+p {
+    text-align: center;
+}
+
+.sentence {
+    margin-top: 0px;
+}
+
+.ts {
+    margin-bottom: 0px;
+}
+
+#add {
+    display: block;
+    width: calc(100% - 140px);
+    max-width: 400px;
+    height: 50px;
+    margin: 30px auto;
+    text-align: center;
+    line-height:50px;
+    font-size: 20px;
+    background-color: rgb(213, 255, 189);
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+#add:hover {
+    background-color: rgb(223, 255, 199);
+}

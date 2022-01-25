@@ -1,0 +1,142 @@
+#addform {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#switch_label {
+    height: 50px;
+    width: 110px;
+    margin-bottom: 30px;
+    display: block;
+    cursor: pointer;
+    border: 2px solid rgb(170, 170, 170);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+}
+
+#switch_label:hover {
+    background-color: rgb(245, 245, 245)
+}
+#verb {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    
+}
+
+#switch_content {
+	display: inline-block;
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    border-radius: 7px;
+    width: 55px;
+    height: 20px;
+    background-color: rgba(34,31,31,.26);
+	overflow: hidden;
+}
+
+
+#switch_input {
+	display: none;
+}
+
+#switch_circle {
+	display: block;
+	top: -37px;
+	left: 45px;
+	position: relative;
+	width: 28px;
+	height: 28px;
+	border-radius: 20px;
+	background-color: rgb(224, 224, 224);
+	transition: all .1s;
+    cursor: pointer;
+}
+
+#switch_input:checked ~ #switch_circle {
+	left: 82px;
+	background-color: rgb(26, 115, 232);
+}
+
+#switch_input:checked ~ #switch_content {
+	border-color: transparent;
+	transition: all 0s;
+    background-color: rgb(130, 174, 233);
+}
+ 
+
+#fields {
+    margin: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.field {
+    margin-bottom: 20px;
+    text-align :center;
+    margin: 0 10px;
+}
+
+.field label {
+    margin: auto;
+    line-height: 20px;
+
+}
+
+.field textarea {
+    width: 225px;
+    height: 26px;
+    resize: none;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#pt, #pp, #prp {
+    display: none;
+}
+
+.sample {
+    display: none;
+    width: 231px;
+    margin: 0 10px;
+    margin-top: 31px;
+    text-align: right;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#save {
+    display: block;
+    width: calc(100% - 140px);
+    max-width: 362px;
+    height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    line-height:50px;
+    font-size: 20px;
+    background-color: rgb(213, 255, 189);
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+#save:hover {
+    background-color: rgb(223, 255, 199);
+}
+
+@media screen and (max-width: 516px)
+{
+    .field {
+        width: 100%;
+    }
+    .field textarea {
+        width: 80%;
+    }
+}

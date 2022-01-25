@@ -1,0 +1,57 @@
+{% extends 'ew/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'ew/css/detail.css' %}">
+{% endblock %}
+
+
+{% block tools %}
+<a href="{% url 'ew:edit' spell %}" id="edit">編集する</a>
+{% endblock %}
+
+
+{% block content %}
+<table>
+    <tr>
+        <td>単語</td>
+        <td>{{ spell }}</td>  
+    </tr>
+    <tr>
+        <td>訳</td>
+        <td>{{ ts }}</td>
+    </tr>
+
+    {% if pt != "" %}
+    <tr>
+        <td>過去形</td>
+        <td>{{ pt }}</td>
+    </tr>
+    {% endif %}
+
+    {% if prp != "" %}
+    <tr>
+        <td>現在分詞</td>
+        <td>{{ prp }}</td>
+    </tr>
+    {% endif %}
+    
+    {% if pp != "" %}
+    <tr>
+        <td>過去分詞形</td>
+        <td>{{ pp }}</td>
+    </tr>
+    {% endif %}
+
+</table>
+
+<hr>
+{% for s in em %}
+<p>
+{{ s.sentence }}
+<br><br>
+{{ s.ts }}
+</p><hr>    
+{% endfor %}
+
+{% endblock %}
