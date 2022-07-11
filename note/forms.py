@@ -1,4 +1,8 @@
 from django import forms
+from .models import Notes
 
-class Note(forms.Form):
-    text = forms.CharField(widget=forms.Textarea, label='', max_length=500)
+
+class Notes(forms.ModelForm):
+    class Meta:
+        model = Notes
+        exclude = ['tag','created']

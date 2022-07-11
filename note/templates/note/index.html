@@ -1,31 +1,35 @@
 {% extends 'note/base.html' %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'note/css/index.css' %}">
+{% endblock %}
+
+
+
+{% block tools %}
+<a href="{% url 'note:add' %}" class="tool">追加する</a>
+{% endblock %}
+
+
+
+
 {% block content %}
-<header>
-    <ul>
-        <li><a href="{% url 'note:index' %}"><img src="{% static 'note/images/note.jpg' %}" width="50px"></a></li>
-        <li><form method='POST' id='noteform' novalidate>{{ form.as_p }}{% csrf_token %}<input type="submit" value='追加' id='add'></form></li>
-    </ul>
-</header>
-
 <main>
+    {% for note in object_list %}
+    <a style="text-decoration: none;color: black;" href="{% url 'note:detail' note.id %}">
 
-    {% for note in notes %}
     <div class='note'>
-        <div class='text'>{{ note.text }}</div>
+        {% if note.title == "タイトルなし" %}
+        <div class='text'>{{ note.text|truncatechars:"40" }}</div>
+        {% else %}
+        <div class='text'>{{ note.title }}</div>
+        {% endif %}
         <div class='date'>{{ note.created }}</div>
-        <div class='delete'>
-            <a href="{% url 'note:delete' note.id %}">
-            <img src="{% static 'note/images/cross.png' %}" class="cross">
-            </a>
-        </div>
-    </div>
-    
+
+    </div></a>
     <hr>
 
     {% endfor %}
 </main>
-
-
 {% endblock %}

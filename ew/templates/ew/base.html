@@ -8,6 +8,7 @@
         <script src="{% static 'ew/script/base.js' %}" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex"/>
+        <meta http-equiv="content-language" content="ja">
         <title>英単語</title>
         {% block head %}{% endblock %}
    </head>
@@ -21,7 +22,7 @@
          <li class='buttonli'><a href="{% url 'ew:examples' %}" class="button"><span>例文</span></a></li>
         </ul>
      </header>
-     <div id="tools">{% block tools %}{% endblock %}</div>
+     <div id="toolbox"><div id="tools">{% block tools %}{% endblock %}</div></div>
      <main>
       {% block content %}{% endblock %}
      </main>

@@ -10,7 +10,7 @@
 
 <form method="POST" id='deletepost'>
     {% csrf_token %}
-    <a href="{% url 'ew:edit' words.spell %}" id='cancel'>キャンセル</a>
+    <a href="{% url 'ew:detail' words.spell %}" id='cancel'>キャンセル</a>
     <input type="submit" value='削除' id='delete'>
 </form>
 {% endblock %}

@@ -6,14 +6,19 @@
 {% endblock %}
 
 
+
 {% block content %}
-<form method='POST' id='add'>
+
+<form action="" method="POST" id="edit">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
+    {{ form.as_table }}
     </table>
+    <br>
     <div id='buttons'>
-        <div id='cancel' onClick="history.back();">キャンセル</div>
-        <input type="submit" value="保存" id="save">
+    <div id='cancel' onClick="history.back();">キャンセル</div>
+    <input type="submit" value="保存" id="save">
+    </div>
 </form>
+
 {% endblock %}

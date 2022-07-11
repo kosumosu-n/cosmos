@@ -1,16 +1,14 @@
 table {
+    margin: 0 auto;
     margin-top: 20px;
-    margin-left: calc(50% - 145px);
 }
 
 table td {
-    width: 110px;
     padding: 10px 10px;
     padding-right: 0px;
 }
 
 tr td:nth-of-type(1) {
-    width: 90px;
     text-align: right;
 }
 
@@ -18,24 +16,4 @@ p {
     text-align: center;
 }
 
-#edit {
-    display: block;
-    width: 150px;
-    height: 46px;
-    margin: 2px 0px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    background-color: rgb(223, 255, 199);
-
-    border-radius: 0px;
-    color: black;
-    text-decoration: none;
-    transition: all  0.1s ease;
-}
-
-#edit:hover {
-    background-color: rgb(255, 255, 255);
-    border-radius: 7px;
-}
 

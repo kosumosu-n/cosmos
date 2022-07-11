@@ -5,11 +5,21 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static 'note/css/style.css' %}">
         <link rel="icon" href="{% static 'note/images/favicon.ico' %}">
+        <script src="{% static 'note/script/base.js' %}" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex"/>
         <title>メモ帳</title>
+        {% block head %}{% endblock %}
    </head>
+
    <body>
-    {% block content %}{% endblock %}
+      <header>
+         <ul>
+             <li><a href="{% url 'note:index' %}"><img src="{% static 'note/images/note.jpg' %}" width="50px"></a></li>
+         </ul>
+     </header>
+    
+<div id="tools">{% block tools %}{% endblock %}</div>
+   <main> {% block content %}{% endblock %}</main> 
    </body>
 </html>

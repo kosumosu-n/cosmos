@@ -1,0 +1,33 @@
+{% extends 'note/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'note/css/detail.css' %}">
+
+
+{% endblock %}
+
+
+{% block tools %}
+<a href="{% url 'note:edit' notes.id %}" class="tool">編集する</a>
+<a href="{% url 'note:delete' notes.id %}" class="tool">削除する</a>
+{% endblock %}
+
+
+{% block content %}
+<div id="content">
+<div id="title">
+{{ notes.title }}
+</div>
+<div id="text">{{ notes.text | linebreaksbr | urlize }}</div>
+</div>
+
+<script>
+    const urls = document.getElementsByTagName('a');
+    for (let i=0; i < urls.length; i++ ){
+        if (i in [0, 1, 2]){continue;};
+        urls[i].setAttribute('target', '_blank')
+        urls[i].setAttribute('rel', 'noopener noreferrer')
+    };
+</script>
+{% endblock %}

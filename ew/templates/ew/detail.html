@@ -7,7 +7,8 @@
 
 
 {% block tools %}
-<a href="{% url 'ew:edit' spell %}" id="edit">編集する</a>
+<a href="{% url 'ew:edit' spell %}" class="tool">編集する</a>
+<a href="{% url 'ew:delete' spell %}" class="tool">削除する</a>
 {% endblock %}
 
 

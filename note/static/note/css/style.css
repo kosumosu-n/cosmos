@@ -1,117 +1,64 @@
-
+body {
+  margin: 0;
+}
 
 header {
-    background-color: rgb(192, 109, 0);
-    position:fixed;
-    top: 0;
-    left: 0;
+    background-color: rgb(206, 128, 25);
     width: 100%;
+    height: 90px;
   }
 
-ul {
+
+header ul {
+    display: flex;
+    height: 90px;
+    margin: 0px 20px;
     padding: 0;
     list-style: none;
-    height: auto;
-    margin: 0%;
+    align-items:center
   }
 
-  li {
-    float: left;
-    margin: 7px 0px 7px 30px;
-  }
 
-  li a {
-    width: auto;
+header li {
+  height: 74px;
+}
+
+header li a {
     text-decoration:none;
-    margin-top:10px;
-    margin:0 auto;
   }
 
-  #noteform {
-    width: calc(100vw - 110px);
-    min-width: 200px;
-    display:inline-flex
-  }
-  #noteform p {
-      width: calc(100% - 82.66px);
-      margin: 0px;
-  }
-  #noteform textarea {
-    resize: none;
-    width: 100%;
-    height: 73px;
-    margin-right: 20px;
-    font-size: 20px;
-}
 
-#noteform #add {
-    height: 79px;
-    margin-right: 20px;
-    margin-left: 23px;
-}
-
-#noteform2 {
-  margin-top: 110px;
-  margin-left: 30px;
-  margin-right: 30px;
-  text-align: center;
-}
-
-#noteform2 textarea {
-  resize: none;
-  width: 100%;
-}
-
-#noteform2 #add {
-  width: 100px;
-  height: 60px;
-  font-size: 25px;
-}
 
 main {
+  margin: 20px 20px;
+}
+
+
+#tools {
+  background-color: rgb(255, 177, 75);
   width: 100%;
-  margin-top: 120px;
-  margin-left: 0px;
+  height: 50px;
+  display: flex;
+  justify-content:center;
 }
 
-.note {
-  width: 100%;
-  display:flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.text {
-  width: 50%;
-  font-size: 20px;
-  overflow-wrap : break-word;
-  margin-right: calc(50% - 200px);
-}
-
-.date {
-  width: 142px;
-}
-
-.delete {
-  width: 40px;
-  height: 40px;
-  margin-left: 10px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-}
-
-.delete:hover {
-  background-color: rgb(226, 226, 226);
-}
-
-.delete a {
+.tool {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 130px;
+  height: 50px;
+  margin: 0px 0px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  background-color: rgb(255, 177, 75);
+  border-radius: 0px;
+  color: black;
+  text-decoration: none;
+  transition: all  0.1s ease;
 }
 
-.cross{
-  height: 16px;
-  margin: 12px;
-
+.tool:hover {
+  background-color: rgb(255, 196, 118);
+  border-radius: 7px;
 }
+
