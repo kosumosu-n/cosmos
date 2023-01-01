@@ -7,4 +7,5 @@ urlpatterns = [
     path('note/', include('note.urls')),
     path('pf/', include('pf.urls')),
     path('ew/', include('ew.urls')),
+    path('counter/', include('counter.urls')),
 ]

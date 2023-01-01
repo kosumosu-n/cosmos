@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'note.apps.NoteConfig',
     'pf.apps.PfConfig',
     'ew.apps.EwConfig', 
+    'counter.apps.CounterConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
