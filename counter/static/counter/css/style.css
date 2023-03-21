@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+    height: 100%;
+  }
+header {
+    background-color: rgb(1, 247, 255);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+ul {
+    padding: 0;
+    list-style: none;
+    height: auto;
+    margin: 0%;
+  }
+
+li {
+    float: left;
+    margin: 7px 0px 7px 30px;
+  }
+
+main {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0  auto;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+  }
+
+  #counter {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  #count {
+    font-size: 72px;
+    margin: 50px 0;
+  }
+  
+  button {
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(2, 220, 228);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(0, 207, 214);
+  }
+

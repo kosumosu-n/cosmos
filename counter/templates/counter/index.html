@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static 'counter/css/style.css' %}">
         <link rel="icon" href="{% static 'counter/images/favicon.ico' %}">
+        <script src="{% static 'counter/script/script.js'%}" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex"/>
         <title>カウンター</title>
@@ -16,7 +17,14 @@
         <li><li><a href="{% url 'home:index' %}"><img src="{% static 'home/cosmos.png' %}" width="50px"></a></li></li>
       </ul>
    </header>
-
+   <main>
+    <div id="counter">
+      <h1>回数計</h1>
+      <p id="count">0</p>
+      <button id="increment">カウント +1</button>
+      <button id="reset">リセット</button>
+    </div>
+   </main>
 
 
 
