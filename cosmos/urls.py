@@ -8,4 +8,5 @@ urlpatterns = [
     path('pf/', include('pf.urls')),
     path('ew/', include('ew.urls')),
     path('counter/', include('counter.urls')),
+    path('wcount/', include('wcount.urls'))
 ]

@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex"/>
+        <title>文字数カウント</title>
+        <style>
+            html {
+              background-color: rgb(218, 218, 218);
+              height: 100%;
+            }
+            body {
+              margin: 0px;
+              height: 100%;
+            }
+            header {
+              background-color: rgb(150, 0, 195);
+              position:fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+            }
+  
+            ul {
+              padding: 0;
+              list-style: none;
+              height: auto;
+              margin: 0%;
+            }
+  
+            li {
+              float: left;
+              margin: 7px 0px 7px 30px;
+            }
+            main {
+              max-width: 1000px;
+              height: 100%;
+              margin: 0  auto;
+              background-color: rgb(255, 255, 255);
+              overflow: hidden;
+            }
+            p {
+              font-size: 18px;
+            }
+  
+            div {
+              margin: auto;
+              display:flex;
+              flex-direction: column;
+              text-align: center;
+            }
+            .counter {
+                margin-top: 100px;
+            }
+            #textInput {
+              height: 300px;
+              margin: 0px 20px;
+              resize: none;
+              font-size: 20px;
+            }
+            table {
+              font-size: 18px;
+              margin: auto;
+              border-collapse: collapse;
+            }
+            td {
+              min-width: 50px;
+            }
+            table, th, td {
+              border: 1px solid black; /* 枠線（border）を1pxの実線で表示 */
+            }
+            th,td {
+              padding: 5px;
+            }
+          </style>
+   </head>
+   <body>
+    <header>
+        <ul>
+          <li><li><a href="{% url 'home:index' %}"><img src="{% static 'home/cosmos.png' %}" width="50px"></a></li></li>
+        </ul>
+      </header>
+    <main>
+      <div class="counter">
+        <h1>文字数カウンター</h1>
+        <br>
+        <textarea id="textInput" placeholder="ここに文章を入力してください..." oninput="countCharacters()"></textarea>
+        <br>
+        <!-- <p>文字数: <span id="charCount">0</span></p>
+        <p>文字数(改行,スペースなし): <span id="charCount2">0</span></p> -->
+        <table>
+          <tr>
+            <td>文字数</td>
+            <td><span id="charCount">0</span></td>
+          </tr>
+          <tr>
+            <td>文字数(改行,スペースなし)</td>
+            <td><span id="charCount2">0</span></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <script>
+        function countCharacters() {
+            const textInput = document.getElementById('textInput');
+            const charCount = document.getElementById('charCount');
+            charCount.textContent = textInput.value.length;
+            charCount2.textContent = textInput.value.replace(/[ 　\n\r]/g, '').length;
+        }
+    </script>
+   </body>
+</html>
+
+
+

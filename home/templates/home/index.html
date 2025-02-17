@@ -11,14 +11,7 @@
             body {
                 background-color: rgb(240, 240, 240);
             }
-            div {
-                max-width: 1000px;
-                margin: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                align-items: baseline;
-            }
+
             a {
                 margin: 5px;
                 display: inline-block;
@@ -32,6 +25,10 @@
                 height: auto;
                 margin: 15px;
             }
+            .appname {
+                font-size: 12px;
+                padding: 30px;
+            }
             #note {
                 width: 120px;
             }
@@ -44,15 +41,43 @@
             #counter {
                 width: 170px;
             }
-
+            #iconmenu {
+                max-width: 1000px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: baseline;
+            }
+            #textmenu {
+                max-width: 600px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .textlink {
+                font-size: 20px;
+                padding:20px;
+                text-decoration: none;
+                color: black;
+            }
         </style>
     </head>
     <body>
-        <div>
+        <!-- <div id="icon_menu">
         <a href="{% url 'note:index' %}"><img  id="note" class="icon" src="{% static 'note/images/note.jpg' %}" alt="メモ"></a>
         <a href="{% url 'pf:index' %}"><img  id="pf" class="icon" src="{% static 'home/pf.png' %}" alt="素因数分解"></a>
         <a href="{% url 'ew:index' %}"><img  id="ew" class="icon" src="{% static 'ew/images/ew.png' %}" alt="英単語"></a>
         <a href="{% url 'counter:index' %}"><img  id="counter" class="icon" src="{% static 'home/counter.png' %}" alt="カウンター"></a>
+        <a href="{% url 'wcount:index' %}">文字数カウント</a>
+        </div> -->
+        <div id="textmenu">
+        <a href="{% url 'note:index' %}" class="textlink">メモ帳</a>
+        <a href="{% url 'pf:index' %}" class="textlink">素因数分解</a>
+        <a href="{% url 'ew:index' %}" class="textlink">英単語</a>
+        <a href="{% url 'counter:index' %}" class="textlink">カウンター</a>
+        <a href="{% url 'wcount:index' %}" class="textlink">文字数カウント</a>
         </div>
     </body>
 </html>
