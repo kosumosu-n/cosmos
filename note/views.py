@@ -21,9 +21,14 @@ class Delete(generic.DeleteView):
     template_name = 'note/delete.html'
     success_url = reverse_lazy('note:index')
 
-class Detail(generic.DetailView):
+class Detail(generic.DeleteView):
     model = Notes
     template_name = 'note/detail.html'
+    success_url = reverse_lazy('note:index')
+
+# class Detail(generic.DetailView):
+#     model = Notes
+#     template_name = 'note/detail.html'
 
 class Edit(generic.UpdateView):
     model = Notes

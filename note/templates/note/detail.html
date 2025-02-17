@@ -10,7 +10,11 @@
 
 {% block tools %}
 <a href="{% url 'note:edit' notes.id %}" class="tool">編集する</a>
-<a href="{% url 'note:delete' notes.id %}" class="tool">削除する</a>
+<!-- <a href="{% url 'note:delete' notes.id %}" class="tool">削除する</a> -->
+<form method="POST" onsubmit="return confirm('本当に削除しますか？');">
+    {% csrf_token %}
+    <input type="submit" value='削除する' style="border: none;" class="tool">
+</form>
 {% endblock %}
 
 
@@ -23,12 +27,12 @@
 <div id="text">{{ notes.text | linebreaksbr | urlize }}</div>
 </div>
 
-<script>
+<!-- <script>
     const urls = document.getElementsByTagName('a');
     for (let i=0; i < urls.length; i++ ){
         if (i in [0, 1, 2]){continue;};
         urls[i].setAttribute('target', '_blank')
         urls[i].setAttribute('rel', 'noopener noreferrer')
     };
-</script>
+</script> -->
 {% endblock %}
